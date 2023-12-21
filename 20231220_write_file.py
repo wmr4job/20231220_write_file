@@ -13,6 +13,7 @@ while True:
 for item in products:
 	print(item[0], '的價格是', item[1])
 
-with open('products.csv','w') as f: # 打開檔案，如沒有這個檔案就會建立檔案
+with open('products.csv','w', encoding = 'utf-8') as f: # 打開檔案，並使用UTF-8的編碼
+	f.write('商品,價格\n') # 增加標題列
 	for item in products:
 		f.write(item[0] + ',' + item[1] + '\n') # f.write將內容寫入，加上','是為了分隔內容
